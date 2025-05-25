@@ -1,0 +1,29 @@
+﻿@attribute [Route(Paths.ParticipantNameEntryPage)]
+
+<PageTitle>
+   Enter participant name
+</PageTitle>
+
+<div class="text-center mt-5">
+   <h1>
+      Enter participant name
+   </h1>
+
+   <div class="mt-4" style="max-width: 300px; margin: auto;">
+      <InputText @bind-Value="ParticipantName"
+                 placeholder="e.g. Alice"
+                 class="form-control mb-2" />
+
+      <button @onclick="JoinRoom"
+              class="btn btn-primary w-100">
+         Join Room
+      </button>
+
+      @if (!string.IsNullOrEmpty(ErrorMessage))
+      {
+         <div class="text-danger mt-2">
+            @ErrorMessage
+         </div>
+      }
+   </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@attribute [Route(Paths.RoomCodeEntryPage)]
+
+<PageTitle>
+   Enter room code
+</PageTitle>
+
+<div class="text-center mt-5">
+   <h1>
+      Enter room code
+   </h1>
+
+   <div class="mt-4" style="max-width: 300px; margin: auto;">
+      <InputText @bind-Value="RoomCode"
+                 placeholder="e.g. 3f2504e0-4f89-11d3-9a0c-0305e82c3301"
+                 class="form-control mb-2" />
+
+      <button @onclick="JoinRoom"
+              class="btn btn-primary w-100">
+         Join Room
+      </button>
+
+      @if (!string.IsNullOrEmpty(ErrorMessage))
+      {
+         <div class="text-danger mt-2">
+            @ErrorMessage
+         </div>
+      }
+   </div>
+</div>
